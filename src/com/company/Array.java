@@ -1,20 +1,21 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class Array {
 
     private int[] tabela; //to jest drugie, nie inicjalizujemy jeszcze tablicy, to będziemy robić dopiero w klasie main
     private int licznik; //to jest trzecie, tu bedzie przezchowywana wartość ilości elementów tablicy
-    public void get(){
+    private int len;
 
-        int [] tabela = {1, 2, 3, 4};
-        System.out.println("długość tablicy: " + tabela.length);
-        for (int licznik = 0; licznik < tabela.length; licznik++) {
-            System.out.println(tabela[licznik]);
-
+    public void get(int len){
+        this.len = len;
+        int[] tabela = new int[len];
+        for(int i=0; i<tabela.length; i++){
+            tabela[i] = i+1;//this will call constructor.
         }
-
+        System.out.println("długość tablicy: " + tabela.length);
+        for (int i = 0; i < tabela.length; i++) {
+            System.out.println(tabela[i]);
+        }
 
 //
 //        ArrayList<Integer> list = new ArrayList<>(); //Tworzymy konstruktor klasy Lista z jednym parametrem (wielkość listy)

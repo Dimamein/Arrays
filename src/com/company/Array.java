@@ -7,18 +7,29 @@ public class Array {
     private int[] tabela; //to jest drugie, nie inicjalizujemy jeszcze tablicy, to będziemy robić dopiero w klasie main
     private int licznik; //to jest trzecie, tu bedzie przezchowywana wartość ilości elementów tablicy
     public void get(){
-        ArrayList<Integer> list = new ArrayList<>(); //Tworzymy konstruktor klasy Lista z jednym parametrem (wielkość listy)
 
-        list.add(10);
-        list.add(20);
-        list.add(30);
-        list.size();
-        list.toArray();
-        //Inicjalizujemy listę
-        System.out.println("długość tablicy: " + list.size());
-        for(int i = 0; i< list.size(); i++) {
-            System.out.println(list.get(i));
+        int [] tabela = {1, 2, 3, 4};
+        System.out.println("długość tablicy: " + tabela.length);
+        for (int licznik = 0; licznik < tabela.length; licznik++) {
+            System.out.println(tabela[licznik]);
+
         }
+
+
+//
+//        ArrayList<Integer> list = new ArrayList<>(); //Tworzymy konstruktor klasy Lista z jednym parametrem (wielkość listy)
+//
+//        list.add(10);
+//        list.add(20);
+//        list.add(30);
+//        list.size();
+//        list.toArray();
+//        //Inicjalizujemy listę
+//
+//        for(int i = 0; i< list.size(); i++) {
+//            System.out.println("długość tablicy: " + list.size());
+//            System.out.println(list.get(i));
+//        }
 
     }
 

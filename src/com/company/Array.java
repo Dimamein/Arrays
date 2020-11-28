@@ -6,32 +6,48 @@ public class Array {
     private int licznik; //(3) Deklarujemy licznik ilości itemów naszej tabeli
 
     //(4) Tworzymy konstruktor klasy Lista z jednym parametrem (wielkość listy)
-    public void CreateArray(int length){
+    Array(int length){
         //(5) Inicjalizujemy listę
-        int[] tabela = new int[length];
+        tabela = new int[length];
         for(int i=0; i< tabela.length; i++){
             tabela[i] = i+1;
         }
-        Print(tabela);
     }
     //(6) Tworzymy metodę która bedzie drukować wszystkie elementy tabel
     //(7) TESTUJEMY METODĘ, jak nie działa, poprawiamy aż do skutku
-    public void Print(int[] tabela){
+    public void Print(){
         System.out.println("długość tablicy: " + tabela.length);
         for (int i = 0; i < tabela.length; i++) {
             System.out.println(tabela[i]);
         }
     }
 
+    //(8) Tworzymy metodę dodaj - metoda ma mieć jeden parametr (element który chcemy dodać)
+    public void Dodaj (int parametr) {
+        //(9) Dodawanie elementu do tabeli po ostatnio dodanym elemencie (pamiętaj o zwiększeniu licznika ilości elementów po dodatniu elementu!)
+        //(10) Jeżeli tabela jest pełna, musimy zrobić nową
+//        int new_lenght = tabela.length + 1;
+//        int [] tabela = new int[new_lenght];
+//        tabela[new_lenght] = parametr;
+        //(11) Tworzymy nową tabelę z większą pojemnością (2x większą niż poprzednia)
+        int [] tabela_new = new int[tabela.length * 2];
+        for (int i = 0; i < tabela.length; i++) {
+            tabela_new[i] = tabela[i];
+        }
+        tabela_new[tabela.length] = parametr;
+        //(12) Kopiujemy wszystkie elementy z pierwotnej tabeli do tabeli nowej
+        //(13) Przypisujemy starej tabeli wartość nowej
+        int [] tabela = new int[tabela_new.length];
+        for(int i=0; i< tabela.length; i++){
+            tabela[i] = tabela_new[i];
+        }
+        //(14) TESTUJEMY METODĘ!
+        System.out.println("długość tablicy: " + tabela.length);
+        for (int i = 0; i < tabela.length; i++) {
+            System.out.println(tabela[i]);
+        }
 
-
-    //TODO(8) Tworzymy metodę dodaj - metoda ma mieć jeden parametr (element który chcemy dodać)
-    //TODO(9) Dodawanie elementu do tabeli po ostatnio dodanym elemencie (pamiętaj o zwiększeniu licznika ilości elementów po dodatniu elementu!)
-        //TODO(10) Jeżeli tabela jest pełna, musimy zrobić nową
-            //TODO(11) Tworzymy nową tabelę z większą pojemnością (2x większą niż poprzednia)
-            //TODO(12) Kopiujemy wszystkie elementy z pierwotnej tabeli do tabeli nowej
-            //TODO(13) Przypisujemy starej tabeli wartość nowej
-    //TODO(14) TESTUJEMY METODĘ!
+    }
 
 
     //TODO(15)Tworzymy metodę usuńIndex - metoda z jednym parametrem, który jest indeksem

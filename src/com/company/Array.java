@@ -2,37 +2,27 @@ package com.company;
 
 public class Array {
 
-    private int[] tabela; //to jest drugie, nie inicjalizujemy jeszcze tablicy, to będziemy robić dopiero w klasie main
-    private int licznik; //to jest trzecie, tu bedzie przezchowywana wartość ilości elementów tablicy
-    private int len;
+    private int[] tabela; //(2)Deklarujemy utworzenie tabeli liczb, ale jej nie inicjalizujemy
+    private int licznik; //(3) Deklarujemy licznik ilości itemów naszej tabeli
 
-    public void get(int len){
-        this.len = len;
-        int[] tabela = new int[len];
-        for(int i=0; i<tabela.length; i++){
-            tabela[i] = i+1;//this will call constructor.
+    //(4) Tworzymy konstruktor klasy Lista z jednym parametrem (wielkość listy)
+    public void CreateArray(int length){
+        //(5) Inicjalizujemy listę
+        int[] tabela = new int[length];
+        for(int i=0; i< tabela.length; i++){
+            tabela[i] = i+1;
         }
+        Print(tabela);
+    }
+    //(6) Tworzymy metodę która bedzie drukować wszystkie elementy tabel
+    //(7) TESTUJEMY METODĘ, jak nie działa, poprawiamy aż do skutku
+    public void Print(int[] tabela){
         System.out.println("długość tablicy: " + tabela.length);
         for (int i = 0; i < tabela.length; i++) {
             System.out.println(tabela[i]);
         }
-
-//
-//        ArrayList<Integer> list = new ArrayList<>(); //Tworzymy konstruktor klasy Lista z jednym parametrem (wielkość listy)
-//
-//        list.add(10);
-//        list.add(20);
-//        list.add(30);
-//        list.size();
-//        list.toArray();
-//        //Inicjalizujemy listę
-//
-//        for(int i = 0; i< list.size(); i++) {
-//            System.out.println("długość tablicy: " + list.size());
-//            System.out.println(list.get(i));
-//        }
-
     }
+
 
 
     //TODO(8) Tworzymy metodę dodaj - metoda ma mieć jeden parametr (element który chcemy dodać)
